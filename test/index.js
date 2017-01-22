@@ -26,6 +26,7 @@ describe('PopAds', () => {
     it ('getAll', (done) => {
       pa.campaign.getAll().then((data) => {
         expect(data.campaigns).to.be.an('array');
+        console.log(data.campaigns);
         done();
       });
     })
@@ -38,6 +39,7 @@ describe('PopAds', () => {
       pa.report.publisher().then((report) => {
         expect(report.mode).to.equal('publisher');
         expect(report.rows).to.be.an('array');
+        console.log(report);
         done();
       })
     })
@@ -46,6 +48,7 @@ describe('PopAds', () => {
       pa.report.advertiser().then((report) => {
         expect(report.mode).to.equal('advertiser');
         expect(report.rows).to.be.an('array');
+        console.log(report);
         done();
       })
     })
