@@ -8,4 +8,20 @@ export default class Campaign extends Base {
     return p.then(res => res.body);
   }
 
+  start({campaign_id}) {
+    let url = `${this.baseUrl}/api/campaign_start`;
+    let p = request.get(url).query({
+      key: this.apiKey,
+      campaign_id
+    }).set('Accept', 'application/json').end();
+  }
+
+  pause({campaign_id}) {
+    let url = `${this.baseUrl}/api/campaign_pause`;
+    let p = request.get(url).query({
+      key: this.apiKey,
+      campaign_id
+    }).set('Accept', 'application/json').end();
+  }
+
 }

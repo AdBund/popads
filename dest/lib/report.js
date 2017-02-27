@@ -36,9 +36,10 @@ var Report = function (_Base) {
     value: function publisher() {
       var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      options.key = this.apiKey;
       var url = this.baseUrl + '/api/report_publisher';
-      var p = _request2.default.post(url).query(options).set('Accept', 'application/json').end();
+
+      var p = _request2.default.post(url).query({ key: this.apiKey }).send(options).set('Accept', 'application/json').end();
+
       return p.then(function (res) {
         return res.body;
       });
@@ -48,9 +49,10 @@ var Report = function (_Base) {
     value: function advertiser() {
       var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      options.key = this.apiKey;
       var url = this.baseUrl + '/api/report_advertiser';
-      var p = _request2.default.post(url).query(options).set('Accept', 'application/json').end();
+
+      var p = _request2.default.post(url).query({ key: this.apiKey }).send(options).set('Accept', 'application/json').end();
+
       return p.then(function (res) {
         return res.body;
       });

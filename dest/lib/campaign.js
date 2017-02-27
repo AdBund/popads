@@ -40,6 +40,28 @@ var Campaign = function (_Base) {
         return res.body;
       });
     }
+  }, {
+    key: 'start',
+    value: function start(_ref) {
+      var campaign_id = _ref.campaign_id;
+
+      var url = this.baseUrl + '/api/campaign_start';
+      var p = _request2.default.get(url).query({
+        key: this.apiKey,
+        campaign_id: campaign_id
+      }).set('Accept', 'application/json').end();
+    }
+  }, {
+    key: 'pause',
+    value: function pause(_ref2) {
+      var campaign_id = _ref2.campaign_id;
+
+      var url = this.baseUrl + '/api/campaign_pause';
+      var p = _request2.default.get(url).query({
+        key: this.apiKey,
+        campaign_id: campaign_id
+      }).set('Accept', 'application/json').end();
+    }
   }]);
 
   return Campaign;
