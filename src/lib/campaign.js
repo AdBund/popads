@@ -14,6 +14,7 @@ export default class Campaign extends Base {
       key: this.apiKey,
       campaign_id
     }).set('Accept', 'application/json').end();
+    return p.then(res => res.body);
   }
 
   pause({campaign_id}) {
@@ -22,6 +23,7 @@ export default class Campaign extends Base {
       key: this.apiKey,
       campaign_id
     }).set('Accept', 'application/json').end();
+    return p.then(res => res.body);
   }
 
 }
