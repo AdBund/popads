@@ -50,6 +50,9 @@ var Campaign = function (_Base) {
         key: this.apiKey,
         campaign_id: campaign_id
       }).set('Accept', 'application/json').end();
+      return p.then(function (res) {
+        return res.body;
+      });
     }
   }, {
     key: 'pause',
@@ -61,6 +64,9 @@ var Campaign = function (_Base) {
         key: this.apiKey,
         campaign_id: campaign_id
       }).set('Accept', 'application/json').end();
+      return p.then(function (res) {
+        return res.body;
+      });
     }
   }]);
 
