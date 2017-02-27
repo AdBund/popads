@@ -10,7 +10,7 @@ export default class Campaign extends Base {
 
   start({campaign_id}) {
     let url = `${this.baseUrl}/api/campaign_start`;
-    let p = request.get(url).query({
+    let p = request.post(url).query({
       key: this.apiKey,
       campaign_id
     }).set('Accept', 'application/json').end();
@@ -19,7 +19,7 @@ export default class Campaign extends Base {
 
   pause({campaign_id}) {
     let url = `${this.baseUrl}/api/campaign_pause`;
-    let p = request.get(url).query({
+    let p = request.post(url).query({
       key: this.apiKey,
       campaign_id
     }).set('Accept', 'application/json').end();
