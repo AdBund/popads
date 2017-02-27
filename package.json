@@ -10,7 +10,7 @@
     "flow": "flow",
     "watch:test": "nodemon --watch ./src --watch ./test --recursive --exec npm run test",
     "watch:build": "nodemon --watch ./src --recursive --exec npm run build",
-    "prepublish": "npm run eslint && npm run test && npm run build"
+    "prepublish": "npm run eslint && npm run build"
   },
   "keywords": [],
   "author": "",
